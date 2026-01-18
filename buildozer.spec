@@ -6,9 +6,10 @@ package.domain = org.murdergame
 source.dir = .
 source.include_exts = py,png,jpg,kv,json
 version = 1.0
+
 p4a.branch = develop
 
-requirements = python3,kivy
+requirements = python3,kivy,libffi
 orientation = portrait
 
 fullscreen = 1
@@ -27,5 +28,4 @@ icon.filename = skins/1.png
 [buildozer]
 
 log_level = 2
-
 warn_on_root = 0
