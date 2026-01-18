@@ -2,6 +2,10 @@ name: Build Kivy APK
 
 on:
   push:
+name: Build Kivy APK
+
+on:
+  push:
     branches: [ main ]
   workflow_dispatch:
 
@@ -37,11 +41,11 @@ jobs:
         pip install --upgrade pip
         pip install buildozer cython==0.29.36
 
-    - name: Clean old p4a builds (fix libffi issues)
+    - name: Clean old p4a libffi builds
       run: |
         rm -rf ~/.buildozer/android/platform/build-*/build/other_builds/libffi
 
-    - name: First Buildozer run (downloads SDK)
+    - name: First Buildozer run (downloads SDK/NDK)
       run: |
         buildozer android debug || true
 
