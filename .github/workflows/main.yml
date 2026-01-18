@@ -35,9 +35,9 @@ jobs:
       run: |
         buildozer android debug || true
 
-    - name: Accept Android SDK licenses
+    - name: Accept Android SDK licenses (correct path)
       run: |
-        yes | ~/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses
+        yes | ~/.buildozer/android/platform/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
 
     - name: Final Build
       run: |
