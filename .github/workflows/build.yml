@@ -37,6 +37,10 @@ jobs:
         pip install --upgrade pip
         pip install buildozer cython==0.29.36
 
+    - name: Clean old p4a builds (fix libffi issues)
+      run: |
+        rm -rf ~/.buildozer/android/platform/build-*/build/other_builds/libffi
+
     - name: First Buildozer run (downloads SDK)
       run: |
         buildozer android debug || true
